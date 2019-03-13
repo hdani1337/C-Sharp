@@ -1,6 +1,7 @@
-S:\Horváth Dániel\C#\Második\masodik\masodik\bin\Debug\masodik.exe.config
-S:\Horváth Dániel\C#\Második\masodik\masodik\bin\Debug\masodik.exe
-S:\Horváth Dániel\C#\Második\masodik\masodik\bin\Debug\masodik.pdb
-S:\Horváth Dániel\C#\Második\masodik\masodik\obj\Debug\masodik.csproj.CoreCompileInputs.cache
-S:\Horváth Dániel\C#\Második\masodik\masodik\obj\Debug\masodik.exe
-S:\Horváth Dániel\C#\Második\masodik\masodik\obj\Debug\masodik.pdb
+S:\Horváth Dániel\C#\Második\masodik\bin\Debug\masodik.exe.config
+S:\Horváth Dániel\C#\Második\masodik\bin\Debug\masodik.exe
+S:\Horváth Dániel\C#\Második\masodik\bin\Debug\masodik.pdb
+S:\Horváth Dániel\C#\Második\masodik\obj\Debug\masodik.csproj.CoreCompileInputs.cache
+S:\Horváth Dániel\C#\Második\masodik\obj\Debug\masodik.exe
+S:\Horváth Dániel\C#\Második\masodik\obj\Debug\masodik.pdb
+S:\Horváth Dániel\C#\Második\masodik\obj\Debug\masodik.csprojResolveAssemblyReference.cache
