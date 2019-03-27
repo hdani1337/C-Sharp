@@ -163,25 +163,42 @@ namespace Harmadik
 
         public void prim()
         {
-            bool isPrim = true;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write("Kérek egy számot: ");
+            Console.ForegroundColor = ConsoleColor.Green;
             int szam = Konvert(Console.ReadLine());
-            if (szam < 2) Console.WriteLine("Nem prím!");
+
+            if (isPrim(szam))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(szam + " prímszám!");
+            }
+
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(szam + " nem prímszám!");
+            }
+        }
+
+        public bool isPrim(int szam)
+        {
+            if (szam < 2) return false;
+
             else
             {
                 for (int i = 2; i < szam; i++)
                 {
                     if (szam % i == 0)
                     {
-                        Console.WriteLine("Nem prím!");
-                        isPrim = false;
-                        break;                       
+                        return false;
                     }
                 }
 
-                if (isPrim) Console.WriteLine("Prím!");
+            return true;
             }
         }
+        
 
         public int KonvertSzamKeres(String szam)
         {//Konvertálás a számkérőshöz
@@ -242,7 +259,7 @@ namespace Harmadik
         {
             new Program();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("\n\nNyomj egy gombot a kilépéshez...");
+            Console.WriteLine("\nNyomj egy gombot a kilépéshez...");
             Console.ReadKey();
         }
     }
