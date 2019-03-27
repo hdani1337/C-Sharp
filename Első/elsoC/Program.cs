@@ -8,7 +8,10 @@ namespace elsoC
 {
     class Program
     {
+<<<<<<< HEAD
         Random randomSzam = new Random();
+=======
+>>>>>>> 4dda1aca3e6b9a9eb509c8ccddc4c2466da020d2
 
         public Program() {//konstruktor
             Console.ForegroundColor = ConsoleColor.Gray;//Sárga betűszín
@@ -174,6 +177,7 @@ namespace elsoC
             Console.WriteLine("\n" + darab + " darab szám van.");
             #endregion
 
+<<<<<<< HEAD
             #region RobiAtlag
             Console.WriteLine("\n\nRobi magyar jegyeinek az átlaga");
             //Console.WriteLine("Írj be 8 jegyet! (1 és 5 között)!");
@@ -203,6 +207,15 @@ namespace elsoC
             }
             double atlag = ((double)osszeg / 8.0);
             Console.WriteLine("Az átlag: " + atlag);
+=======
+            #region robiAtlag
+            Console.WriteLine("\n\nRobi magyar jegyeinek az átlaga:");
+            Console.WriteLine("Írj be 8 jegyet! (1 és 5 között)!");
+            for (int i = 0; i < 8; i++)
+            {
+                short jegy = Convert.ToInt16(Console.ReadLine());
+            }
+>>>>>>> 4dda1aca3e6b9a9eb509c8ccddc4c2466da020d2
             #endregion
 
             #region programVege

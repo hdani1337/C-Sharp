@@ -1,0 +1,7 @@
+S:\Horváth Dániel\C#\Harmadik\Harmadik\bin\Debug\Harmadik.exe.config
+S:\Horváth Dániel\C#\Harmadik\Harmadik\bin\Debug\Harmadik.exe
+S:\Horváth Dániel\C#\Harmadik\Harmadik\bin\Debug\Harmadik.pdb
+S:\Horváth Dániel\C#\Harmadik\Harmadik\obj\Debug\Harmadik.csprojResolveAssemblyReference.cache
+S:\Horváth Dániel\C#\Harmadik\Harmadik\obj\Debug\Harmadik.csproj.CoreCompileInputs.cache
+S:\Horváth Dániel\C#\Harmadik\Harmadik\obj\Debug\Harmadik.exe
+S:\Horváth Dániel\C#\Harmadik\Harmadik\obj\Debug\Harmadik.pdb

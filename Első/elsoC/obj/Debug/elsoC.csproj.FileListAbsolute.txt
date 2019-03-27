@@ -1,0 +1,14 @@
+C:\Users\17-091\source\repos\elsoC\elsoC\bin\Debug\elsoC.exe.config
+C:\Users\17-091\source\repos\elsoC\elsoC\bin\Debug\elsoC.exe
+C:\Users\17-091\source\repos\elsoC\elsoC\bin\Debug\elsoC.pdb
+C:\Users\17-091\source\repos\elsoC\elsoC\obj\Debug\elsoC.csprojResolveAssemblyReference.cache
+C:\Users\17-091\source\repos\elsoC\elsoC\obj\Debug\elsoC.csproj.CoreCompileInputs.cache
+C:\Users\17-091\source\repos\elsoC\elsoC\obj\Debug\elsoC.exe
+C:\Users\17-091\source\repos\elsoC\elsoC\obj\Debug\elsoC.pdb
+S:\Horváth Dániel\C#\elsoC\elsoC\bin\Debug\elsoC.exe.config
+S:\Horváth Dániel\C#\elsoC\elsoC\bin\Debug\elsoC.exe
+S:\Horváth Dániel\C#\elsoC\elsoC\bin\Debug\elsoC.pdb
+S:\Horváth Dániel\C#\elsoC\elsoC\obj\Debug\elsoC.csprojResolveAssemblyReference.cache
+S:\Horváth Dániel\C#\elsoC\elsoC\obj\Debug\elsoC.csproj.CoreCompileInputs.cache
+S:\Horváth Dániel\C#\elsoC\elsoC\obj\Debug\elsoC.exe
+S:\Horváth Dániel\C#\elsoC\elsoC\obj\Debug\elsoC.pdb

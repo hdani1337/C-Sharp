@@ -46,13 +46,13 @@ namespace Harmadik
             int ev = 0;
             int honap = 0;
             int nap = 0;
-
+            
             Console.WriteLine("Kérem szépen a születési idődet!");
             Console.Write("Év: ");
             do
             {
                 ev = Konvert(Console.ReadLine(), 4);
-            } while(honap <= 0);
+            } while(ev <= 0);
             Console.Write("Hónap: ");
             do
             {
@@ -77,10 +77,36 @@ namespace Harmadik
                     default:
                         nap = Konvert(Console.ReadLine(), 2, 1, 30);
                         break;
-                }
-
-                nap = Konvert(Console.ReadLine(), 2, 1, 31);
+                }      
             } while (nap <= 0);
+
+            //születési idő dátumainak összege
+            int ossz = 0;
+            ossz += szamOsszeg(ev);
+            ossz += szamOsszeg(honap);
+            ossz += szamOsszeg(nap);
+
+            if (ossz >= 10) ossz = szamOsszeg(ossz);
+
+            Console.WriteLine("összeg: " + ossz); 
+        }
+
+        public int szamOsszeg(int szam)
+        {
+            if (szam < 10) return szam; 
+
+            int temp = szam;
+            int ossz = 0;
+
+            while (temp > 0)
+            {
+                ossz += temp % 10;
+                temp /= 10;
+            }
+
+            //nincs rekurzió
+
+            return ossz;
         }
 
         public int KonvertSzamKeres(String szam)
