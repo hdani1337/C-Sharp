@@ -11,7 +11,8 @@ namespace Harmadik
         Program()
         {
             //elso();
-            szuletes();
+            //szuletes()
+            oszto();
         }
 
         public void elso()
@@ -91,6 +92,56 @@ namespace Harmadik
             Console.WriteLine("összeg: " + ossz); 
         }
 
+        public void oszto()
+        {
+            byte sortores = 0;
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("Kérek egy egyik számot: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            long szam = KonvertLong(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("Kérek egy másik számot: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            long szam2 = KonvertLong(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n" + szam + " osztói: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            for (int i = 1; i < szam; i++)
+            {
+                if (szam % i == 0)
+                {
+                    sortores++;
+                    if (sortores == 10)
+                    {
+                        Console.Write("\n");
+                        sortores = 0;
+                    }
+                    Console.Write(i + ", ");
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n" + szam2 + " osztói: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            sortores = 0;
+
+            for (int i = 1; i < szam2; i++)
+            {
+                if (szam2 % i == 0)
+                {
+                    sortores++;
+                    if (sortores == 10)
+                    {
+                        Console.Write("\n");
+                        sortores = 0;
+                    }
+                    Console.Write(i + ", ");
+                }
+            }
+        }
+
         public int szamOsszeg(int szam)
         {
             if (szam < 10) return szam; 
@@ -107,6 +158,11 @@ namespace Harmadik
             //nincs rekurzió
 
             return ossz;
+        }
+
+        public void prim()
+        {
+
         }
 
         public int KonvertSzamKeres(String szam)
@@ -142,6 +198,13 @@ namespace Harmadik
             return temp;
         }
 
+        public long KonvertLong(String szam)
+        {
+            long temp = -1;
+            Int64.TryParse(szam, out temp);
+            return temp;
+        }
+
         public int Konvert(String szam, int hossz)
         {
             int n = this.Konvert(szam);
@@ -161,7 +224,7 @@ namespace Harmadik
         {
             new Program();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("\nNyomj egy gombot a kilépéshez...");
+            Console.WriteLine("\n\nNyomj egy gombot a kilépéshez...");
             Console.ReadKey();
         }
     }
