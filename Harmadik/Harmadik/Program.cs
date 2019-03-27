@@ -12,7 +12,8 @@ namespace Harmadik
         {
             //elso();
             //szuletes()
-            oszto();
+            //oszto();
+            prim();
         }
 
         public void elso()
@@ -162,7 +163,24 @@ namespace Harmadik
 
         public void prim()
         {
+            bool isPrim = true;
+            Console.Write("Kérek egy számot: ");
+            int szam = Konvert(Console.ReadLine());
+            if (szam < 2) Console.WriteLine("Nem prím!");
+            else
+            {
+                for (int i = 2; i < szam; i++)
+                {
+                    if (szam % i == 0)
+                    {
+                        Console.WriteLine("Nem prím!");
+                        isPrim = false;
+                        break;                       
+                    }
+                }
 
+                if (isPrim) Console.WriteLine("Prím!");
+            }
         }
 
         public int KonvertSzamKeres(String szam)
