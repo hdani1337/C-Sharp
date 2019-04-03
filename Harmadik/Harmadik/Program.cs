@@ -196,8 +196,10 @@ namespace Harmadik
                 if (isPrim(n))
                 {
                     darab++;
-                    if (darab % sortores == 0) Console.WriteLine();
+                   
+                    //if (darab % sortores == 0) Console.WriteLine();
                     Console.Write(n + ", ");
+                    primekKulonbseg(darab, n);
                 }
                 n++;
 
@@ -205,6 +207,28 @@ namespace Harmadik
 
             }
             Console.WriteLine();
+        }
+
+        int jelenlegi = 0;
+        int elozo = 0;
+
+        public void primekKulonbseg(int darab, int n)
+        {           
+            if (darab % 2 == 1)
+            {
+                elozo = n;
+            }
+            else if (darab % 2 == 0)
+            {
+                jelenlegi = n;
+            }
+
+            if (jelenlegi > 0 && elozo > 0)
+            {
+                kulonbseg(jelenlegi, elozo);
+                jelenlegi = 0;
+                elozo = 0;
+            }
         }
 
         public bool isPrim(int szam)
