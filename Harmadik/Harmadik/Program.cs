@@ -13,7 +13,8 @@ namespace Harmadik
             //elso();
             //szuletes()
             //oszto();
-            prim();
+            //prim();
+            elsoSzazPrim();
         }
 
         public void elso()
@@ -178,7 +179,32 @@ namespace Harmadik
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(szam + " nem prímszám!");
+            }      
+        }
+
+        public void elsoSzazPrim()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Az első 100 prímszám");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            int sortores = 20;
+            int darab = 0;
+            int n = 0;
+            while (true)
+            {
+                if (isPrim(n))
+                {
+                    darab++;
+                    if (darab % sortores == 0) Console.WriteLine();
+                    Console.Write(n + ", ");
+                }
+                n++;
+
+                if (darab == 100) break;
+
             }
+            Console.WriteLine();
         }
 
         public bool isPrim(int szam)
