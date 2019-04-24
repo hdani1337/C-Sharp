@@ -12,7 +12,8 @@ namespace Negyedik
         Program()
         {
             //alapok();
-            fuggvenyek();
+            //fuggvenyek();
+            feladat();
         }
 
         public void alapok()
@@ -45,7 +46,7 @@ namespace Negyedik
         public void fuggvenyek()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Kérek csúnyán egy mondatot!");
+            Console.WriteLine("Kérek csúnyán egy mondatot, ami minimum 5 hosszú!");
             Console.Write("==> ");
             Console.ForegroundColor = ConsoleColor.Green;
             String valasz = Console.ReadLine();
@@ -65,10 +66,79 @@ namespace Negyedik
             Console.WriteLine("Benne van a keksz? " + valasz.Contains("keksz"));
 
             //IndexOf
-            Console.WriteLine("Szöveg helyen: " + valasz.IndexOf("Dániel"));
+            Console.WriteLine("'Dániel' hányadik helyen: " + valasz.IndexOf("Dániel"));
 
-            //Substring rész szöveg, szöveg levágása az x-edik karaktertől
+            //Substring rész szöveg, szöveg levágása az x-edik karaktertől, második paraméter pedig az hogy milyen hosszan
             Console.WriteLine("Szöveg az ötödik karaktertől: " + valasz.Substring(5));
+        }
+
+        public void feladat()
+        {
+            //Mondat bekérése, majd minden 'a' és 'e' karakter helyett ':'-t írunk
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Kérek szépen egy mondatot!");
+            Console.Write("==> ");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            String valasz = Console.ReadLine();
+
+            String temp = "";
+
+            for (int i = 0; i < valasz.Length; i++)
+            {
+                char aktualis = valasz[i];
+
+                if (valasz[i] == 'a' || valasz[i] == 'e')
+                {
+                    aktualis = ':';
+                }
+                temp += aktualis;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("A válaszod 'a' és 'e' karakterei kicserélve");
+            Console.Write("==> ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(temp);
+
+            //Minden magánhangzó helyére *
+            String maganh = "aáeéiíuúüűoóöő";
+
+            temp = "";
+
+            for (int i = 0; i < valasz.Length; i++)
+            {
+
+                if (maganh.Contains(valasz[i])) temp += '*';
+                else temp += valasz[i];
+            }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("A válaszod magánhangzói kicserélve");
+            Console.Write("==> ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(temp);
+
+            //Minden mássalhangzó helyére kérdőjel
+
+            temp = "";
+
+            for (int i = 0; i < valasz.Length; i++)
+            {
+
+                if (!maganh.Contains(valasz[i]) && valasz[i] != ' ') temp += '?';
+                else temp += valasz[i];
+            }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("A válaszod mássalhangzói kicserélve");
+            Console.Write("==> ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(temp);
         }
 
         static void Main(string[] args)
