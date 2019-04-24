@@ -197,7 +197,7 @@ namespace Harmadik
                 {
                     darab++;
                    
-                    //if (darab % sortores == 0) Console.WriteLine();
+                    // if (darab % sortores == 0) Console.WriteLine();
                     Console.Write(n + ", ");
                     primekKulonbseg(darab, n);
                 }
