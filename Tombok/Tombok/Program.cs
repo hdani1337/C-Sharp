@@ -16,7 +16,8 @@ namespace Tombok
         Program()
         {
             //introduction();//Bevezetés
-            lotto();
+            //lotto();
+            sorting();
         }
 
         void introduction()
@@ -33,6 +34,68 @@ namespace Tombok
             objects[2] = true;
             objects[3] = 25.3;
             objects[4] = 'c';
+        }
+
+        void sorting()
+        {
+            int[] temp = new int[] {5,4,8,6,1,2};
+            arrayShow(temp, "Original array: ");
+            arrayShow(bubbleSorting(temp, true), "Sorted array: ");
+            askUserForSorting();
+        }
+
+        void askUserForSorting()
+        {
+            Console.Write("\nPlease give me 5 numbers between 1 and 100: ");
+            int[] userNumbersForSorting = new int[5];
+            int goat = 0;
+
+            for (int i = 0; i < userNumbersForSorting.Length; i++)
+            {               
+                do
+                {
+                    Int32.TryParse(Console.ReadLine(), out goat);
+                    if (goat < 0 || goat > 100 || userNumbersForSorting.Contains(goat))
+                    {
+                        Console.Write("\nWrong number! Try again: ");                       
+                    }
+                } while (goat > 100 || goat < 0 || userNumbersForSorting.Contains(goat));
+                userNumbersForSorting[i] = goat;
+            }
+
+            arrayShow(userNumbersForSorting, "User's original array: ");
+            arrayShow(bubbleSorting(userNumbersForSorting, true), "User's sorted array: ");
+        }
+
+        int[] bubbleSorting(int[] array, bool growing)
+        {
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (!growing)
+                    {
+                        if (array[i] > array[j])
+                        {
+                            int temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                    }
+                    else
+                    {
+                        if (array[i] < array[j])
+                        {
+                            int temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                    }
+                }
+            }
+            
+
+            return array;
         }
 
         //user: if(true)Felhasználó számait sorsoljuk, else a gép számait
