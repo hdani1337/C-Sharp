@@ -45,9 +45,9 @@ namespace ListUI
         }
 
         Random random = new Random();
-        List<int> randomSzamok = new List<int> { };
-        List<int> randomSzamok2 = new List<int> { };
-        List<int> indexek = new List<int> { };
+        List<int> randomSzamok;
+        List<int> randomSzamok2;
+        List<int> indexek;
 
         private void setText()
         {
@@ -55,9 +55,10 @@ namespace ListUI
 
             for (int i = 0; i < indexek.Count; i++)
             {
-                s += (i + 1) + ": " + indexek[i] + "db\n";
+                if(randomSzamok[i] != 0) s += (i + 1) + ": " + randomSzamok[i] + "db\n";
             }
 
+            rtbText.Font = new Font("Arial", 15, FontStyle.Bold);
             rtbText.Text = s;
 
         }
@@ -72,9 +73,16 @@ namespace ListUI
                     indexek.Add(0);
                     if (i < 10)
                     {
-                        randomSzamok2.Add(random.Next(1, 21));
-                        if (randomSzamok.Contains(randomSzamok2[i])) randomSzamok.Remove(randomSzamok2[i]);
+                        randomSzamok2.Add(random.Next(1, 21));                       
                     }
+                }
+            }
+
+            for (int i = 0; i < randomSzamok.Count; i++)
+            {
+                for (int j = 0; j < randomSzamok2.Count; j++)
+                {
+                    if (randomSzamok[i] == randomSzamok2[j]) randomSzamok[i] = 0;
                 }
             }
         }
@@ -91,7 +99,10 @@ namespace ListUI
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {                 
+        {
+            randomSzamok = new List<int> { };
+            randomSzamok2 = new List<int> { };
+            indexek = new List<int> { };
             setLists();
             countDifferents();
             setText();

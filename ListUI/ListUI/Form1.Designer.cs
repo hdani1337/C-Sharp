@@ -153,7 +153,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tlpMain.ResumeLayout(false);
             this.tlpTop.ResumeLayout(false);
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);          
 
         }
 
