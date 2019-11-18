@@ -85,6 +85,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -126,6 +127,7 @@
             this.rtbText.Size = new System.Drawing.Size(838, 224);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
+            this.rtbText.TextChanged += new System.EventHandler(this.rtbText_TextChanged);
             // 
             // button5
             // 
@@ -142,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 404);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
