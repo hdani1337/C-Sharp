@@ -46,16 +46,18 @@ namespace ListUI
 
         Random random = new Random();
         List<int> randomSzamok;
-        List<int> randomSzamok2;
-        List<int> indexek;
+        List<int> eltavolitandoSzamok;
+        List<int> egyediek;
 
         private void setText()
         {
             String s = "";
 
-            for (int i = 0; i < indexek.Count; i++)
+            egyediek.Sort();
+
+            for (int i = 0; i < egyediek.Count; i++)
             {
-                if(randomSzamok[i] != 0) s += (i + 1) + ": " + randomSzamok[i] + "db\n";
+                s += egyediek[i] + " "; 
             }
 
             rtbText.Font = new Font("Arial", 15, FontStyle.Bold);
@@ -68,43 +70,36 @@ namespace ListUI
             for (int i = 0; i < 150; i++)
             {
                 randomSzamok.Add(random.Next(1, 21));
-                if (i < 20)
-                {
-                    indexek.Add(0);
-                    if (i < 10)
-                    {
-                        randomSzamok2.Add(random.Next(1, 21));                       
-                    }
-                }
+                if (i < 10) eltavolitandoSzamok.Add(random.Next(1, 21));                     
             }
 
-            for (int i = 0; i < randomSzamok.Count; i++)
+            removeWhile();
+        }
+
+        int index = 0;
+
+        private void removeWhile()
+        {
+            while (true)
             {
-                for (int j = 0; j < randomSzamok2.Count; j++)
-                {
-                    if (randomSzamok[i] == randomSzamok2[j]) randomSzamok[i] = 0;
-                }
+                if (randomSzamok.Contains(eltavolitandoSzamok[index])) randomSzamok.RemoveAll(z => z == eltavolitandoSzamok[index]);
+                if (++index == eltavolitandoSzamok.Count) break;
             }
         }
 
-        private void countDifferents()
+        private void removeDuplicates()
         {
-            for (int i = 0; i < randomSzamok.Count; i++)
-            {
-                for (int j = 0; j < indexek.Count; j++)
-                {
-                    if (randomSzamok[i] == j + 1) indexek[j]++;
-                }
-            }
+            for (int i = 0; i < randomSzamok.Count; i++) if (!egyediek.Contains(randomSzamok[i])) egyediek.Add(randomSzamok[i]);          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             randomSzamok = new List<int> { };
-            randomSzamok2 = new List<int> { };
-            indexek = new List<int> { };
+            eltavolitandoSzamok = new List<int> { };
+            egyediek = new List<int> { };
+            index = 0;
             setLists();
-            countDifferents();
+            removeDuplicates();
             setText();
         }
 
