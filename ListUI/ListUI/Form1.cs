@@ -19,7 +19,7 @@ namespace ListUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int count = 0;
+            /*int count = 0;
 
             foreach (var k in tlpTop.Controls)
             {
@@ -31,7 +31,7 @@ namespace ListUI
                     (k as Button).Text = count + ". gomb";
                 }
                 
-            }
+            }*/
         }
 
         private void tlpMain_Paint(object sender, PaintEventArgs e)
@@ -106,6 +106,12 @@ namespace ListUI
         private void rtbText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmCalc calc = new frmCalc();
+            calc.ShowDialog();
         }
     }
 }

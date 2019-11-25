@@ -54,7 +54,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tlpMain.Size = new System.Drawing.Size(844, 404);
+            this.tlpMain.Size = new System.Drawing.Size(800, 600);
             this.tlpMain.TabIndex = 0;
             this.tlpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpMain_Paint);
             // 
@@ -73,36 +73,39 @@
             this.tlpTop.RowCount = 2;
             this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTop.Size = new System.Drawing.Size(838, 135);
+            this.tlpTop.Size = new System.Drawing.Size(794, 204);
             this.tlpTop.TabIndex = 0;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(413, 61);
+            this.button1.Size = new System.Drawing.Size(391, 96);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "1. Feladat";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Lime;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(422, 3);
+            this.button2.Location = new System.Drawing.Point(400, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(413, 61);
+            this.button2.Size = new System.Drawing.Size(391, 96);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Számológép";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(3, 70);
+            this.button3.Location = new System.Drawing.Point(3, 105);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(413, 62);
+            this.button3.Size = new System.Drawing.Size(391, 96);
             this.button3.TabIndex = 2;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -110,9 +113,9 @@
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(422, 70);
+            this.button4.Location = new System.Drawing.Point(400, 105);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(413, 62);
+            this.button4.Size = new System.Drawing.Size(391, 96);
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
@@ -121,23 +124,24 @@
             // 
             this.rtbText.BackColor = System.Drawing.SystemColors.ControlLight;
             this.rtbText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbText.Location = new System.Drawing.Point(3, 144);
+            this.rtbText.Location = new System.Drawing.Point(3, 213);
             this.rtbText.Name = "rtbText";
             this.rtbText.ReadOnly = true;
-            this.rtbText.Size = new System.Drawing.Size(838, 224);
+            this.rtbText.Size = new System.Drawing.Size(794, 336);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
             this.rtbText.TextChanged += new System.EventHandler(this.rtbText_TextChanged);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.Yellow;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(3, 374);
+            this.button5.Location = new System.Drawing.Point(3, 555);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(838, 27);
+            this.button5.Size = new System.Drawing.Size(794, 42);
             this.button5.TabIndex = 2;
             this.button5.Text = "Exit";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // frmMain
@@ -153,7 +157,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tlpMain.ResumeLayout(false);
             this.tlpTop.ResumeLayout(false);
-            this.ResumeLayout(false);          
+            this.ResumeLayout(false);
 
         }
 
