@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ListUI
 {
@@ -53,10 +54,29 @@ namespace ListUI
 
             if (output != "")
             {
+                fajlbaIras(output);
                 txtValue.Text = output;
                 muvelet = "";
                 elsoSzam = output;
-                masodikSzam = "";
+                masodikSzam = "";             
+            }
+
+            vesszo = false;
+        }
+
+        private void fajlbaIras(string output)
+        {
+            try
+            {
+                File.WriteAllText("muveletek.txt", (File.ReadAllText("muveletek.txt", Encoding.UTF8)) + "\n" + elsoSzam + " " + muvelet + " " + masodikSzam + " = " + output + "\n", Encoding.UTF8);
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
 
@@ -67,6 +87,7 @@ namespace ListUI
             btnMin.BackColor = DefaultBackColor;
             btnMult.BackColor = DefaultBackColor;
             btnDiv.BackColor = DefaultBackColor;
+            vesszo = false;
         }
 
         private void btnMin_Click(object sender, EventArgs e)
@@ -76,6 +97,7 @@ namespace ListUI
             btnPlu.BackColor = DefaultBackColor;
             btnMult.BackColor = DefaultBackColor;
             btnDiv.BackColor = DefaultBackColor;
+            vesszo = false;
         }
 
         private void btnMult_Click(object sender, EventArgs e)
@@ -85,6 +107,7 @@ namespace ListUI
             btnPlu.BackColor = DefaultBackColor;
             btnMin.BackColor = DefaultBackColor;
             btnDiv.BackColor = DefaultBackColor;
+            vesszo = false;
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
@@ -94,6 +117,7 @@ namespace ListUI
             btnPlu.BackColor = DefaultBackColor;
             btnMin.BackColor = DefaultBackColor;
             btnMult.BackColor = DefaultBackColor;
+            vesszo = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -263,17 +287,24 @@ namespace ListUI
             btnDiv.BackColor = DefaultBackColor;
         }
 
+        private bool vesszo = false;
+
         private void btnDot_Click(object sender, EventArgs e)
         {
-            if (muvelet == "")
+            if (!vesszo)
             {
-                elsoSzam += ".";
-                txtValue.Text = elsoSzam;
-            }
-            else
-            {
-                masodikSzam += ".";
-                txtValue.Text = masodikSzam;
+                if (muvelet == "")
+                {
+                    elsoSzam += ",";
+                    txtValue.Text = elsoSzam;
+                }
+                else
+                {
+                    masodikSzam += ",";
+                    txtValue.Text = masodikSzam;
+                }
+
+                vesszo = true;
             }
         }
 
@@ -287,6 +318,22 @@ namespace ListUI
             else
             {
                 masodikSzam = masodikSzam.Substring(0, masodikSzam.Length - 1);
+                txtValue.Text = masodikSzam;
+            }
+        }
+
+        private void buttonPluMin_Click(object sender, EventArgs e)
+        {
+            if (masodikSzam == "")
+            {
+                if (!elsoSzam.Contains('-')) elsoSzam = "-" + elsoSzam;
+                else elsoSzam = elsoSzam.Remove(0,1);
+                txtValue.Text = elsoSzam;
+            }
+            else
+            {
+                if (!masodikSzam.Contains('-')) masodikSzam = "-" + masodikSzam;
+                else masodikSzam = masodikSzam.Remove(0,1);
                 txtValue.Text = masodikSzam;
             }
         }

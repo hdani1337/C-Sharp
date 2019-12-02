@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,6 +104,29 @@ namespace ListUI
             setText();
         }
 
+
+        private string fajlbolKiolvasas()
+        {
+            string temp = "";
+
+            try
+            {
+                temp = File.ReadAllText("muveletek.txt", Encoding.UTF8);
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+                temp = "A fájl nem található.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                temp = "Hiba.";
+            }
+
+            return temp;
+        }
+
         private void rtbText_TextChanged(object sender, EventArgs e)
         {
 
@@ -110,8 +134,10 @@ namespace ListUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmCalc calc = new frmCalc();
+            frmCalc calc = new frmCalc();          
             calc.ShowDialog();
+            rtbText.Text = "Műveletek:\n";
+            rtbText.Text += fajlbolKiolvasas();
         }
     }
 }
