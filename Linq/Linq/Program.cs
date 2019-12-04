@@ -10,6 +10,7 @@ namespace Linq
     class Program
     {
         List<string> lista = new List<string>();
+        List<Szinesz> szineszek = new List<Szinesz>();
 
         Program()
         {
@@ -21,6 +22,11 @@ namespace Linq
             try
             {
                 lista = File.ReadAllLines("szinesz.txt", Encoding.UTF8).Skip(1).ToList();//Fájl beolvasása, első sor kihagyása, átalakítás listává
+
+                foreach (string sor in lista)
+                {
+                    szineszek.Add(new Szinesz(sor));
+                }
             }
             catch (FileNotFoundException e)
             {
