@@ -40,7 +40,9 @@ namespace Kuksi
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //REGISTER
+            Registry registry = new Registry(termekek);
+            registry.ShowDialog();
         }
 
         private void frmMain_SizeChanged(object sender, EventArgs e)
@@ -51,6 +53,11 @@ namespace Kuksi
             fontSize = ((w+h) / (450+220.0f)) * 24.0f;
             //Méretváltoztatás
             button1.Font = new Font("Comic Sans MS", fontSize);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //ADD
         }
     }
 }
