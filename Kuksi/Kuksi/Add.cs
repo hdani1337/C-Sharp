@@ -12,14 +12,17 @@ namespace Kuksi
 {
     public partial class Add : Form
     {
-        public Add()
+        public List<string> categories;
+
+        public Add(List<string> categories)
         {
             InitializeComponent();
+            this.categories = categories;
         }
 
         private void Add_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -58,6 +58,13 @@ namespace Kuksi
         private void button3_Click(object sender, EventArgs e)
         {
             //ADD
+            List<string> categories = new List<string>();
+            for (int i = 0; i < termekek.Count; i++)
+            {
+                if (!categories.Contains(termekek[i].kategoria)) categories.Add(termekek[i].kategoria);
+            }
+            Add add = new Add(categories);         
+            add.ShowDialog();
         }
     }
 }
