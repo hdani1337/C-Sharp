@@ -39,6 +39,7 @@
             this.mtAr = new System.Windows.Forms.MaskedTextBox();
             this.mtRaktar = new System.Windows.Forms.MaskedTextBox();
             this.mtDatum = new System.Windows.Forms.MaskedTextBox();
+            this.btnFelvetel = new System.Windows.Forms.Button();
             this.tlpAddMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.tlpAddMain.Controls.Add(this.mtAr, 1, 2);
             this.tlpAddMain.Controls.Add(this.mtRaktar, 1, 3);
             this.tlpAddMain.Controls.Add(this.mtDatum, 1, 4);
+            this.tlpAddMain.Controls.Add(this.btnFelvetel, 4, 4);
             this.tlpAddMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddMain.Location = new System.Drawing.Point(0, 0);
             this.tlpAddMain.Name = "tlpAddMain";
@@ -184,6 +186,17 @@
             this.mtDatum.TabIndex = 9;
             this.mtDatum.ValidatingType = typeof(System.DateTime);
             // 
+            // btnFelvetel
+            // 
+            this.btnFelvetel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFelvetel.Location = new System.Drawing.Point(433, 267);
+            this.btnFelvetel.Name = "btnFelvetel";
+            this.btnFelvetel.Size = new System.Drawing.Size(183, 61);
+            this.btnFelvetel.TabIndex = 10;
+            this.btnFelvetel.Text = "Felvétel";
+            this.btnFelvetel.UseVisualStyleBackColor = true;
+            this.btnFelvetel.Click += new System.EventHandler(this.btnFelvetel_Click);
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,5 +225,6 @@
         private System.Windows.Forms.MaskedTextBox mtAr;
         private System.Windows.Forms.MaskedTextBox mtRaktar;
         private System.Windows.Forms.MaskedTextBox mtDatum;
+        private System.Windows.Forms.Button btnFelvetel;
     }
 }
