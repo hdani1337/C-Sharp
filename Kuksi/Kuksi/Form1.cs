@@ -20,11 +20,12 @@ namespace Kuksi
             InitializeComponent();
         }
 
-        public List<Termek> termekek = new List<Termek>();
+        public List<Termek> termekek;
 
         private void adatokBetoltese() {
             try
             {
+                termekek = new List<Termek>();
                 List<string> sorok = File.ReadAllLines("Termekek.csv", Encoding.UTF8).ToList();
                 foreach (string sor in sorok) termekek.Add(new Termek(sor));
             }
@@ -65,6 +66,7 @@ namespace Kuksi
             }
             Add add = new Add(categories);         
             add.ShowDialog();
+            adatokBetoltese();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Kuksi
 
         private void btnFelvetel_Click(object sender, EventArgs e)
         {
-            string sor = "";
+            string sor = "\n";
 
             bool hiba = false;
 
@@ -51,7 +51,7 @@ namespace Kuksi
             sor += cboTipus.SelectedValue + ";";
 
             //TERMÉK NEVE
-            sor += txtNev.Text + ";";
+            sor += txtNev.Text.Trim() + ";";
             if (txtNev.Text.Length == 0)
             {
                 hiba = true;
@@ -60,7 +60,7 @@ namespace Kuksi
             else
             {
                 //TERMÉK ÁRA
-                sor += mtAr.Text + ";";
+                sor += mtAr.Text.Trim().Substring(0,mtAr.Text.Trim().Length-2) + ";";
 
                 //HIBAKERESÉS
                 int temp = 0;
@@ -75,7 +75,7 @@ namespace Kuksi
                 {
 
                     //TERMÉK DARABSZÁMA
-                    sor += mtRaktar.Text + ";";
+                    sor += mtRaktar.Text.Trim().Substring(0,mtRaktar.Text.Trim().Length-2) + ";darab;";
 
                     //HIBAKERESÉS
                     Int32.TryParse(mtRaktar.Text.Trim().Substring(0, mtRaktar.Text.Trim().Length - 2), out temp);
@@ -89,10 +89,12 @@ namespace Kuksi
                     {
 
                         //NAPLÓZÁS DÁTUMA
-                        sor += mtDatum.Text;
+                        sor += mtDatum.Text;                     
 
+                        File.AppendAllText(@"..\..\Termekek.csv", sor);
                         File.AppendAllText("Termekek.csv", sor);
                         MessageBox.Show("A termék adatai sikeresen elmentve!");
+                        this.Close();
                     }
                 }
             }
