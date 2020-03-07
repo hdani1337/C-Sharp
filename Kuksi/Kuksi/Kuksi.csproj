@@ -65,6 +65,24 @@
     <Compile Include="Registry.Designer.cs">
       <DependentUpon>Registry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopLogin.Designer.cs">
+      <DependentUpon>ShopLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopRegister.Designer.cs">
+      <DependentUpon>ShopRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Termek.cs" />
     <EmbeddedResource Include="Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
@@ -83,6 +101,15 @@
     </Compile>
     <EmbeddedResource Include="Registry.resx">
       <DependentUpon>Registry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopLogin.resx">
+      <DependentUpon>ShopLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopRegister.resx">
+      <DependentUpon>ShopRegister.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
