@@ -13,6 +13,8 @@ namespace Kuksi
         private void registerButton_Click(object sender, EventArgs e)
         {
             //Regisztráció ablak megnyitása
+            ShopRegister shopRegister = new ShopRegister();
+            shopRegister.ShowDialog();
         }
 
         private void loginButton_Click(object sender, EventArgs e)

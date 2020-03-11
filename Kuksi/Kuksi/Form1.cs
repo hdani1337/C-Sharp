@@ -68,5 +68,11 @@ namespace Kuksi
             add.ShowDialog();
             adatokBetoltese();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ShopLogin shopLogin = new ShopLogin();
+            shopLogin.ShowDialog();
+        }
     }
 }
