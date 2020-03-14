@@ -34,15 +34,14 @@ namespace Kuksi
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.loginLabel = new System.Windows.Forms.Label();
             this.tlpData = new System.Windows.Forms.TableLayoutPanel();
-            this.username = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.tlpLogin = new System.Windows.Forms.TableLayoutPanel();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.registerLabel = new System.Windows.Forms.Label();
-            this.succLabel = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpData.SuspendLayout();
             this.tlpLogin.SuspendLayout();
@@ -98,14 +97,6 @@ namespace Kuksi
             this.tlpData.Size = new System.Drawing.Size(927, 263);
             this.tlpData.TabIndex = 1;
             // 
-            // username
-            // 
-            this.username.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.username.Location = new System.Drawing.Point(466, 54);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(283, 23);
-            this.username.TabIndex = 0;
-            // 
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -127,6 +118,14 @@ namespace Kuksi
             this.usernameLabel.TabIndex = 2;
             this.usernameLabel.Text = "Felhasználónév";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // username
+            // 
+            this.username.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.username.Location = new System.Drawing.Point(466, 54);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(283, 23);
+            this.username.TabIndex = 0;
             // 
             // passwordLabel
             // 
@@ -150,7 +149,6 @@ namespace Kuksi
             this.tlpLogin.Controls.Add(this.loginButton, 1, 1);
             this.tlpLogin.Controls.Add(this.registerButton, 0, 1);
             this.tlpLogin.Controls.Add(this.registerLabel, 0, 0);
-            this.tlpLogin.Controls.Add(this.succLabel, 1, 0);
             this.tlpLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLogin.Location = new System.Drawing.Point(3, 349);
             this.tlpLogin.Name = "tlpLogin";
@@ -199,26 +197,15 @@ namespace Kuksi
             this.registerLabel.Text = "Nincs fiókja? Regisztráljon most!";
             this.registerLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // succLabel
-            // 
-            this.succLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.succLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.succLabel.Location = new System.Drawing.Point(466, 0);
-            this.succLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.succLabel.Name = "succLabel";
-            this.succLabel.Size = new System.Drawing.Size(458, 78);
-            this.succLabel.TabIndex = 3;
-            this.succLabel.Text = "(Sikeres / sikertelen belépés)";
-            this.succLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // ShopLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tlpMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ShopLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShopLogin";
             this.tlpMain.ResumeLayout(false);
             this.tlpData.ResumeLayout(false);
@@ -240,6 +227,5 @@ namespace Kuksi
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label registerLabel;
-        private System.Windows.Forms.Label succLabel;
     }
 }

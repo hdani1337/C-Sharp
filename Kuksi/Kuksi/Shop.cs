@@ -7,9 +7,12 @@ namespace Kuksi
 {
     public partial class Shop : Form
     {
-        public Shop()
+        private User user;
+        public Shop(User user)
         {
             InitializeComponent();
+            this.user = user;
+            userLabel.Text = "Felhasználó: " + user.username;
             dataGridView1.DataSource = frmMain.termekek;//Terméklista adatforrása a termékek lista
         }
         
@@ -29,21 +32,17 @@ namespace Kuksi
                 //Bármilyen exception elkapása, so professional
                 try
                 {
-                    //Mindenképp kell egy felhasználónév
-                    if (userBox.Text == "") MessageBox.Show("Kérem adja meg a felhasználónevét!");
-                    else
-                    {
-                        int megadottDarabszam = Convert.ToInt32(termekDarab.Text.Substring(0, 5).Trim());//Mennyit akar venni a felhasználó az adott termékből 
-                        int kivalasztottDarabszama = Convert.ToInt32(row.Cells[4].Value.ToString());//Mennyi darab van a raktárban a kiválasztott termékből
+                    int megadottDarabszam = Convert.ToInt32(termekDarab.Text.Substring(0, 5).Trim());//Mennyit akar venni a felhasználó az adott termékből 
+                    int kivalasztottDarabszama = Convert.ToInt32(row.Cells[4].Value.ToString());//Mennyi darab van a raktárban a kiválasztott termékből
 
-                        if (megadottDarabszam <= kivalasztottDarabszama)
-                        {//Ha van elég termék a raktárban
-                            kosarList.Items.Insert(kosarList.Items.Count, megadottDarabszam + "x " + row.Cells[2].Value);//Kosár listához hozzáadjuk a terméket és a darabszámot
-                            frmMain.termekek[row.Cells[4].RowIndex].darabszam -= megadottDarabszam;//Frissítsük a darabszámot
-                            dataGridView1.Refresh();//Terméklista frissítése
-                        }
-                        else MessageBox.Show("Nincs ennyi termék a raktárban!");//Ha nincs elég termék a raktárban akkor hibaüzenet
+                    if (megadottDarabszam <= kivalasztottDarabszama) 
+                    {//Ha van elég termék a raktárban
+                        kosarList.Items.Insert(kosarList.Items.Count, megadottDarabszam + "x " + row.Cells[2].Value);//Kosár listához hozzáadjuk a terméket és a darabszámot
+                        frmMain.termekek[row.Cells[4].RowIndex].darabszam -= megadottDarabszam;//Frissítsük a darabszámot
+                        dataGridView1.Refresh();//Terméklista frissítése
                     }
+                    else MessageBox.Show("Nincs ennyi termék a raktárban!");//Ha nincs elég termék a raktárban akkor hibaüzenet
+                    
                 }
                 catch (Exception)
                 {
@@ -59,7 +58,7 @@ namespace Kuksi
             {//Ha nem üres a kosár, akkor vesszük fel a rendelést
                 List<string> vasarlas = new List<string>();//Ideiglenes tömb az adatoknak
                 vasarlas.Add("Date: " + DateTime.Now);//Pontos idő mentése
-                vasarlas.Add("User: " + userBox.Text);//Felhasználónév mentése
+                vasarlas.Add("User: " + user.username);//Felhasználónév mentése
                 
                 //Rendelt termékek mentése
                 vasarlas.Add("Items:");

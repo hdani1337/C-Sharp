@@ -13,8 +13,6 @@ namespace Kuksi
 {
     public partial class frmMain : Form
     {
-        public float fontSize = 20;
-
         public frmMain()
         {
             InitializeComponent();
@@ -46,16 +44,6 @@ namespace Kuksi
             registry.ShowDialog();
         }
 
-        private void frmMain_SizeChanged(object sender, EventArgs e)
-        {
-            float w = Width;
-            float h = Height;
-
-            fontSize = ((w+h) / (450+220.0f)) * 24.0f;
-            //Méretváltoztatás
-            button1.Font = new Font("Comic Sans MS", fontSize);
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             //ADD
@@ -71,11 +59,9 @@ namespace Kuksi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*ShopLogin shopLogin = new ShopLogin();
-            shopLogin.ShowDialog();*/
-            
-            Shop shop = new Shop();
-            shop.ShowDialog();
+            Visible = false;
+            ShopLogin shopLogin = new ShopLogin();
+            shopLogin.Show();
         }
     }
 }

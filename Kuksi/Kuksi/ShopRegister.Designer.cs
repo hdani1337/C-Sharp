@@ -32,17 +32,17 @@ namespace Kuksi
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.registerButton = new System.Windows.Forms.Button();
             this.registerLabel = new System.Windows.Forms.Label();
             this.tlpData = new System.Windows.Forms.TableLayoutPanel();
-            this.registerButton = new System.Windows.Forms.Button();
-            this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.usernameReg = new System.Windows.Forms.TextBox();
+            this.passwordReg = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.TextBox();
-            this.usernameReg = new System.Windows.Forms.TextBox();
-            this.passwordReg = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpData.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,6 +70,19 @@ namespace Kuksi
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(933, 519);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // registerButton
+            // 
+            this.registerButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registerButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.registerButton.Location = new System.Drawing.Point(3, 349);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(927, 167);
+            this.registerButton.TabIndex = 2;
+            this.registerButton.Text = "Regisztrálás";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // registerLabel
             // 
@@ -103,18 +116,17 @@ namespace Kuksi
             this.tlpData.Size = new System.Drawing.Size(927, 263);
             this.tlpData.TabIndex = 1;
             // 
-            // registerButton
+            // passwordLabel
             // 
-            this.registerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registerButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold,
+            this.passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.registerButton.Location = new System.Drawing.Point(3, 349);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(927, 167);
-            this.registerButton.TabIndex = 2;
-            this.registerButton.Text = "Regisztrálás";
-            this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.passwordLabel.Location = new System.Drawing.Point(3, 131);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(457, 132);
+            this.passwordLabel.TabIndex = 4;
+            this.passwordLabel.Text = "Jelszó";
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // usernameLabel
             // 
@@ -128,17 +140,23 @@ namespace Kuksi
             this.usernameLabel.Text = "Felhasználónév";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // passwordLabel
+            // usernameReg
             // 
-            this.passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.passwordLabel.Location = new System.Drawing.Point(3, 131);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(457, 132);
-            this.passwordLabel.TabIndex = 4;
-            this.passwordLabel.Text = "Jelszó";
-            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.usernameReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.usernameReg.Location = new System.Drawing.Point(466, 54);
+            this.usernameReg.Name = "usernameReg";
+            this.usernameReg.Size = new System.Drawing.Size(283, 23);
+            this.usernameReg.TabIndex = 5;
+            // 
+            // passwordReg
+            // 
+            this.passwordReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.passwordReg.Location = new System.Drawing.Point(466, 185);
+            this.passwordReg.Name = "passwordReg";
+            this.passwordReg.PasswordChar = '*';
+            this.passwordReg.Size = new System.Drawing.Size(283, 23);
+            this.passwordReg.TabIndex = 6;
+            this.passwordReg.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel2
             // 
@@ -189,31 +207,15 @@ namespace Kuksi
             this.username.Size = new System.Drawing.Size(94, 20);
             this.username.TabIndex = 0;
             // 
-            // usernameReg
-            // 
-            this.usernameReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.usernameReg.Location = new System.Drawing.Point(466, 54);
-            this.usernameReg.Name = "usernameReg";
-            this.usernameReg.Size = new System.Drawing.Size(283, 23);
-            this.usernameReg.TabIndex = 5;
-            // 
-            // passwordReg
-            // 
-            this.passwordReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.passwordReg.Location = new System.Drawing.Point(466, 185);
-            this.passwordReg.Name = "passwordReg";
-            this.passwordReg.PasswordChar = '*';
-            this.passwordReg.Size = new System.Drawing.Size(283, 23);
-            this.passwordReg.TabIndex = 6;
-            this.passwordReg.UseSystemPasswordChar = true;
-            // 
             // ShopRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ShopRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShopRegister";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpData.ResumeLayout(false);

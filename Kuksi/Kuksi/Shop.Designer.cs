@@ -41,7 +41,6 @@ namespace Kuksi
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tlpTop = new System.Windows.Forms.TableLayoutPanel();
             this.cartLabel = new System.Windows.Forms.Label();
-            this.userBox = new System.Windows.Forms.TextBox();
             this.userLabel = new System.Windows.Forms.Label();
             this.kosarList = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -174,11 +173,9 @@ namespace Kuksi
             // 
             // tlpTop
             // 
-            this.tlpTop.ColumnCount = 5;
+            this.tlpTop.ColumnCount = 4;
             this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpTop.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpTop.ColumnStyles.Add(
@@ -186,22 +183,11 @@ namespace Kuksi
             this.tlpTop.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tlpTop.Controls.Add(this.cartLabel, 2, 0);
-            this.tlpTop.Controls.Add(this.userBox, 1, 0);
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpTop.Controls.Add(this.cartLabel, 1, 0);
             this.tlpTop.Controls.Add(this.userLabel, 0, 0);
-            this.tlpTop.Controls.Add(this.kosarList, 3, 0);
-            this.tlpTop.Controls.Add(this.tableLayoutPanel1, 4, 0);
+            this.tlpTop.Controls.Add(this.kosarList, 2, 0);
+            this.tlpTop.Controls.Add(this.tableLayoutPanel1, 3, 0);
             this.tlpTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTop.Location = new System.Drawing.Point(0, 0);
             this.tlpTop.Margin = new System.Windows.Forms.Padding(0);
@@ -216,18 +202,11 @@ namespace Kuksi
             this.cartLabel.AutoSize = true;
             this.cartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.cartLabel.Location = new System.Drawing.Point(375, 0);
+            this.cartLabel.Location = new System.Drawing.Point(376, 0);
             this.cartLabel.Name = "cartLabel";
             this.cartLabel.Size = new System.Drawing.Size(69, 24);
             this.cartLabel.TabIndex = 2;
             this.cartLabel.Text = "Kosár:";
-            // 
-            // userBox
-            // 
-            this.userBox.Location = new System.Drawing.Point(96, 3);
-            this.userBox.Name = "userBox";
-            this.userBox.Size = new System.Drawing.Size(272, 23);
-            this.userBox.TabIndex = 1;
             // 
             // userLabel
             // 
@@ -245,7 +224,7 @@ namespace Kuksi
             this.kosarList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kosarList.FormattingEnabled = true;
             this.kosarList.ItemHeight = 15;
-            this.kosarList.Location = new System.Drawing.Point(468, 3);
+            this.kosarList.Location = new System.Drawing.Point(469, 3);
             this.kosarList.Name = "kosarList";
             this.kosarList.Size = new System.Drawing.Size(227, 201);
             this.kosarList.TabIndex = 3;
@@ -258,14 +237,14 @@ namespace Kuksi
             this.tableLayoutPanel1.Controls.Add(this.priceLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.purchaseButton, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(701, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(702, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(229, 201);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 201);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // priceLabel
@@ -285,7 +264,7 @@ namespace Kuksi
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.purchaseButton.Location = new System.Drawing.Point(3, 53);
             this.purchaseButton.Name = "purchaseButton";
-            this.purchaseButton.Size = new System.Drawing.Size(223, 145);
+            this.purchaseButton.Size = new System.Drawing.Size(222, 145);
             this.purchaseButton.TabIndex = 1;
             this.purchaseButton.Text = "Vásárlás";
             this.purchaseButton.UseVisualStyleBackColor = true;
@@ -297,7 +276,9 @@ namespace Kuksi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tlpMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Shop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shop";
             this.tlpMain.ResumeLayout(false);
             this.tlpBottom.ResumeLayout(false);
@@ -316,7 +297,6 @@ namespace Kuksi
         private System.Windows.Forms.TableLayoutPanel tlpBottom;
         private System.Windows.Forms.TableLayoutPanel tlpTop;
         private System.Windows.Forms.Label userLabel;
-        private System.Windows.Forms.TextBox userBox;
         private System.Windows.Forms.Label cartLabel;
         private System.Windows.Forms.ListBox kosarList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
