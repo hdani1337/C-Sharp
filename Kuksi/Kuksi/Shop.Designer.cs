@@ -36,6 +36,9 @@ namespace Kuksi
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.termekLabel = new System.Windows.Forms.Label();
             this.termekNevLabel = new System.Windows.Forms.Label();
+            this.termekDarab = new System.Windows.Forms.MaskedTextBox();
+            this.toCart = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tlpTop = new System.Windows.Forms.TableLayoutPanel();
             this.cartLabel = new System.Windows.Forms.Label();
             this.userBox = new System.Windows.Forms.TextBox();
@@ -44,15 +47,12 @@ namespace Kuksi
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.priceLabel = new System.Windows.Forms.Label();
             this.purchaseButton = new System.Windows.Forms.Button();
-            this.termekDarab = new System.Windows.Forms.MaskedTextBox();
-            this.toCart = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tlpMain.SuspendLayout();
             this.tlpBottom.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.tlpTop.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -90,7 +90,6 @@ namespace Kuksi
             this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpBottom.Size = new System.Drawing.Size(933, 312);
             this.tlpBottom.TabIndex = 0;
-            this.tlpBottom.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -115,7 +114,6 @@ namespace Kuksi
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(927, 87);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // termekLabel
             // 
@@ -124,7 +122,7 @@ namespace Kuksi
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.termekLabel.Location = new System.Drawing.Point(3, 32);
             this.termekLabel.Name = "termekLabel";
-            this.termekLabel.Size = new System.Drawing.Size(105, 23);
+            this.termekLabel.Size = new System.Drawing.Size(104, 23);
             this.termekLabel.TabIndex = 0;
             this.termekLabel.Text = "Termék:";
             // 
@@ -135,8 +133,44 @@ namespace Kuksi
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.termekNevLabel.Location = new System.Drawing.Point(114, 32);
             this.termekNevLabel.Name = "termekNevLabel";
-            this.termekNevLabel.Size = new System.Drawing.Size(531, 23);
+            this.termekNevLabel.Size = new System.Drawing.Size(530, 23);
             this.termekNevLabel.TabIndex = 1;
+            // 
+            // termekDarab
+            // 
+            this.termekDarab.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.termekDarab.Location = new System.Drawing.Point(651, 32);
+            this.termekDarab.Mask = "000000db";
+            this.termekDarab.Name = "termekDarab";
+            this.termekDarab.Size = new System.Drawing.Size(131, 23);
+            this.termekDarab.TabIndex = 2;
+            // 
+            // toCart
+            // 
+            this.toCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toCart.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.toCart.Location = new System.Drawing.Point(790, 3);
+            this.toCart.Name = "toCart";
+            this.toCart.Size = new System.Drawing.Size(134, 81);
+            this.toCart.TabIndex = 3;
+            this.toCart.Text = "Kosárba";
+            this.toCart.UseVisualStyleBackColor = true;
+            this.toCart.Click += new System.EventHandler(this.toCart_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode =
+                System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 96);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(927, 213);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tlpTop
             // 
@@ -194,7 +228,6 @@ namespace Kuksi
             this.userBox.Name = "userBox";
             this.userBox.Size = new System.Drawing.Size(272, 23);
             this.userBox.TabIndex = 1;
-            this.userBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // userLabel
             // 
@@ -216,7 +249,6 @@ namespace Kuksi
             this.kosarList.Name = "kosarList";
             this.kosarList.Size = new System.Drawing.Size(227, 201);
             this.kosarList.TabIndex = 3;
-            this.kosarList.SelectedIndexChanged += new System.EventHandler(this.kosarList_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -257,42 +289,7 @@ namespace Kuksi
             this.purchaseButton.TabIndex = 1;
             this.purchaseButton.Text = "Vásárlás";
             this.purchaseButton.UseVisualStyleBackColor = true;
-            // 
-            // termekDarab
-            // 
-            this.termekDarab.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.termekDarab.Location = new System.Drawing.Point(651, 32);
-            this.termekDarab.Mask = "000000db";
-            this.termekDarab.Name = "termekDarab";
-            this.termekDarab.Size = new System.Drawing.Size(133, 23);
-            this.termekDarab.TabIndex = 2;
-            // 
-            // toCart
-            // 
-            this.toCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toCart.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.toCart.Location = new System.Drawing.Point(790, 3);
-            this.toCart.Name = "toCart";
-            this.toCart.Size = new System.Drawing.Size(134, 81);
-            this.toCart.TabIndex = 3;
-            this.toCart.Text = "Kosárba";
-            this.toCart.UseVisualStyleBackColor = true;
-            this.toCart.Click += new System.EventHandler(this.toCart_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode =
-                System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 213);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click);
             // 
             // Shop
             // 
@@ -306,10 +303,10 @@ namespace Kuksi
             this.tlpBottom.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.tlpTop.ResumeLayout(false);
             this.tlpTop.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
 
