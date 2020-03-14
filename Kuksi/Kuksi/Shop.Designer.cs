@@ -96,9 +96,9 @@ namespace Kuksi
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tableLayoutPanel2.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
             this.tableLayoutPanel2.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.ColumnStyles.Add(
@@ -113,20 +113,18 @@ namespace Kuksi
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(927, 87);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // termekLabel
             // 
-            this.termekLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.termekLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.termekLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.termekLabel.Location = new System.Drawing.Point(4, 32);
+            this.termekLabel.Location = new System.Drawing.Point(3, 32);
             this.termekLabel.Name = "termekLabel";
-            this.termekLabel.Size = new System.Drawing.Size(85, 23);
+            this.termekLabel.Size = new System.Drawing.Size(105, 23);
             this.termekLabel.TabIndex = 0;
             this.termekLabel.Text = "Termék:";
             // 
@@ -135,9 +133,9 @@ namespace Kuksi
             this.termekNevLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.termekNevLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F,
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.termekNevLabel.Location = new System.Drawing.Point(95, 32);
+            this.termekNevLabel.Location = new System.Drawing.Point(114, 32);
             this.termekNevLabel.Name = "termekNevLabel";
-            this.termekNevLabel.Size = new System.Drawing.Size(548, 23);
+            this.termekNevLabel.Size = new System.Drawing.Size(531, 23);
             this.termekNevLabel.TabIndex = 1;
             // 
             // tlpTop
@@ -280,6 +278,7 @@ namespace Kuksi
             this.toCart.TabIndex = 3;
             this.toCart.Text = "Kosárba";
             this.toCart.UseVisualStyleBackColor = true;
+            this.toCart.Click += new System.EventHandler(this.toCart_Click);
             // 
             // dataGridView1
             // 
@@ -293,6 +292,7 @@ namespace Kuksi
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(927, 213);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Shop
             // 

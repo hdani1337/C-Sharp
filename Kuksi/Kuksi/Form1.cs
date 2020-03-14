@@ -20,7 +20,7 @@ namespace Kuksi
             InitializeComponent();
         }
 
-        public List<Termek> termekek;
+        public static List<Termek> termekek;
 
         private void adatokBetoltese() {
             try
@@ -71,8 +71,11 @@ namespace Kuksi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ShopLogin shopLogin = new ShopLogin();
-            shopLogin.ShowDialog();
+            /*ShopLogin shopLogin = new ShopLogin();
+            shopLogin.ShowDialog();*/
+            
+            Shop shop = new Shop();
+            shop.ShowDialog();
         }
     }
 }
