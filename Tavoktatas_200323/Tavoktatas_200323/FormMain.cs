@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Tavoktatas_200323
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         public List<Movie> filmek = null;
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             adatokBetoltese();
@@ -32,10 +32,6 @@ namespace Tavoktatas_200323
                 if (filmek != null)
                 {
                     dgwFilmek.DataSource = filmek;
-                    for (int i = 0; i < 1000; i++)
-                    {
-                        lbMovie.Items.Add(filmek[i]);
-                    }
                 }
                 else throw new NullReferenceException();
             }
@@ -47,6 +43,17 @@ namespace Tavoktatas_200323
             {
                 MessageBox.Show("Az adatok beolvasása sikertelen volt.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormKolcsonzes formKolcsonzes = new FormKolcsonzes(filmek);
+            formKolcsonzes.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,6 +46,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="FormKolcsonzes.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="FormKolcsonzes.Designer.cs">
+          <DependentUpon>FormKolcsonzes.cs</DependentUpon>
+        </Compile>
         <Compile Include="FormMain.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -55,6 +61,9 @@
         <Compile Include="Movie.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="FormKolcsonzes.resx">
+          <DependentUpon>FormKolcsonzes.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="FormMain.resx">
           <DependentUpon>FormMain.cs</DependentUpon>
         </EmbeddedResource>
