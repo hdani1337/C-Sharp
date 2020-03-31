@@ -109,11 +109,9 @@
             // 
             this.dataPanel.ColumnCount = 2;
             this.dataPanel.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.dataPanel.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.dataPanel.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.dataPanel.Controls.Add(this.passwordBox, 1, 1);
             this.dataPanel.Controls.Add(this.usernameBox, 1, 0);
             this.dataPanel.Controls.Add(this.passwordLabel, 0, 1);
@@ -132,10 +130,10 @@
             this.passwordBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.passwordBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.passwordBox.Location = new System.Drawing.Point(466, 272);
+            this.passwordBox.Location = new System.Drawing.Point(373, 272);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(455, 29);
+            this.passwordBox.Size = new System.Drawing.Size(293, 29);
             this.passwordBox.TabIndex = 1;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
@@ -144,9 +142,9 @@
             this.usernameBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.usernameBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.usernameBox.Location = new System.Drawing.Point(466, 81);
+            this.usernameBox.Location = new System.Drawing.Point(373, 81);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(455, 29);
+            this.usernameBox.Size = new System.Drawing.Size(293, 29);
             this.usernameBox.TabIndex = 0;
             // 
             // passwordLabel
@@ -154,7 +152,7 @@
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F,
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.passwordLabel.Location = new System.Drawing.Point(360, 275);
+            this.passwordLabel.Location = new System.Drawing.Point(267, 275);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(100, 23);
             this.passwordLabel.TabIndex = 3;
@@ -166,7 +164,7 @@
             this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F,
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.usernameLabel.Location = new System.Drawing.Point(289, 84);
+            this.usernameLabel.Location = new System.Drawing.Point(196, 84);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(171, 23);
             this.usernameLabel.TabIndex = 2;
@@ -179,10 +177,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.mainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
-            this.Text = "2018 májusi emelt feladat";
+            this.Text = "Bejelentkezés";
             this.mainPanel.ResumeLayout(false);
             this.buttonPanel.ResumeLayout(false);
             this.dataPanel.ResumeLayout(false);

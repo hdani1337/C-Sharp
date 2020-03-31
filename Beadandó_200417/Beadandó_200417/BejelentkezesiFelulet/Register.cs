@@ -4,8 +4,12 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace Beadandó_200417
-{
-    //TODO: Code Cleanup
+{ 
+    /// <summary>
+    /// Itt jobban csak stringkezelések vannak, nem sok kedvem van kikommentezni
+    /// Milliószor vettük hogy nézzük meg a szöveg hosszát, speciális karaktereket, SubStringeket, stb...
+    /// Ha meg nem érted akkor egy kicsit gond van mert egy hónap múlva érettségizünk ebből, állj neki tanulni
+    /// </summary>
     public partial class Register : Form
     {
         public Register()
@@ -15,6 +19,7 @@ namespace Beadandó_200417
 
         private void nameBox_TextChanged(object sender, EventArgs e)
         {
+            //Neve: minimum 4 karakter és teljes név kell.
             if (nameBox.Text.Length < 4 || !nameBox.Text.Contains(" "))
                 namePanel.BackColor = Color.Red;
             else namePanel.BackColor = Color.GreenYellow;
@@ -22,22 +27,22 @@ namespace Beadandó_200417
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
         {
+            //Felhasználó neve: minimum 4 karakter
             if (usernameBox.Text.Length < 4)
                 usernamePanel.BackColor = Color.Red;
             else
             {
-                bool error = false;
+                bool error = false;//Volt e hiba
             
                 //Foglalt felhasználónév vizsgálata
                 foreach (User user in Login.users)
-                {
                     if (user.username == usernameBox.Text)
                     {
                         usernamePanel.BackColor = Color.Red;
                         error = true;
                         break;
                     }
-                }
+                
 
                 //Ha szabad a név
                 if (!error)
@@ -47,6 +52,7 @@ namespace Beadandó_200417
 
         private void emailBox_TextChanged(object sender, EventArgs e)
         {
+            //Email cím: minimum 3 karakter @ minimum 3 karakter . 2 – 3 karakter
             if (emailBox.Text.Contains("@"))
             {
                 string kukacElott = emailBox.Text.Substring(0, emailBox.Text.IndexOf("@", StringComparison.Ordinal));
@@ -71,6 +77,7 @@ namespace Beadandó_200417
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
+            //Jelszó: 6 – 16 karakter között szám, karakter és egyéb karaktert is kell hogy tartalmazzon
             if (passwordBox.Text.Length > 6 && passwordBox.Text.Length <= 16)
             {
                 int szamok = 0;
@@ -90,19 +97,21 @@ namespace Beadandó_200417
                     }
                     else
                     {//A vizsgált karakter egy betű
-                        if (passwordBox.Text[i].Equals('?') || passwordBox.Text[i].Equals('.') || passwordBox.Text[i].Equals('!') || passwordBox.Text[i].Equals(':') || passwordBox.Text[i].Equals(';'))
-                        {
+                        if (passwordBox.Text[i].Equals('?') || 
+                            passwordBox.Text[i].Equals('.') || 
+                            passwordBox.Text[i].Equals('!') || 
+                            passwordBox.Text[i].Equals(':') || 
+                            passwordBox.Text[i].Equals(';'))
                             //Ha különleges karakter
                             kulonleges++;
-                        }
                         else
-                        {
                             //Ha egy közönséges betű
                             betuk++;
-                        }
+                        
                     }
                 }
 
+                //Fokozatosan állítjuk be a hibajelzőt
                 int correctData = 0;
 
                 if (szamok != 0) correctData++;
@@ -139,6 +148,7 @@ namespace Beadandó_200417
             else passwordPanel.BackColor = Color.Red;
         }
 
+        private string roamingPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private void registerButton_Click(object sender, EventArgs e)
         {
             //Minden adat helyes
@@ -147,10 +157,18 @@ namespace Beadandó_200417
                 emailPanel.BackColor == Color.GreenYellow &&
                 passwordPanel.BackColor == Color.GreenYellow)
             {
-                File.AppendAllText(@"..\..\users.csv", usernameBox.Text + ";" + passwordBox.Text + "\n");
-                File.AppendAllText("users.csv", usernameBox.Text + ";" + passwordBox.Text + "\n");
-                MessageBox.Show("Sikeres regisztráció!");
-                this.Close();
+                //Rögzítjük, hogy ki regisztrált milyen névvel
+                string registerLog = DateTime.Now + ": " + nameBox.Text + " regisztrált a rendszerbe " + usernameBox.Text + " felhasználónéven." + "\n";
+                
+                //Elmentjük a bejelentkezési adatokat
+                string registerSave = usernameBox.Text + ";" + passwordBox.Text + "\n";
+                
+                //Feljegyzések fáljba kiírása
+                File.AppendAllText(roamingPath +  @"\hdani1337-Erettsegi_users.csv", registerSave);
+                File.AppendAllText(roamingPath + @"\hdani1337-Erettsegi_log.txt", registerLog);
+                
+                MessageBox.Show("Sikeres regisztráció! Mostantól bejelentkezhet ezekkel az adatokkal.");
+                Close();
             }
         }
     }

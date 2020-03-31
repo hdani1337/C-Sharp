@@ -224,9 +224,9 @@ namespace Beadandó_200417
             this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F,
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.usernameLabel.Location = new System.Drawing.Point(3, 119);
+            this.usernameLabel.Location = new System.Drawing.Point(4, 119);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(272, 47);
+            this.usernameLabel.Size = new System.Drawing.Size(271, 47);
             this.usernameLabel.TabIndex = 8;
             this.usernameLabel.Text = "Új felhasználónév:";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -245,9 +245,11 @@ namespace Beadandó_200417
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regisztráció";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.dataPanel.ResumeLayout(false);

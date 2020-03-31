@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
 namespace Beadandó_200417
 {
-    //TODO Hatalmas Code Cleanup
+    /// <summary>
+    /// A 2018-as májusi emelt érettségi Access feladatai C#-ban
+    /// Csak azért sem használtam Linq-t sehol
+    /// Minden egyes gomb 1-1 feladatot jelöl, ahogy az magától értetendő
+    /// A feladatok számát eggyel csúsztattam hátra, mivel az első feladat a fájlok beolvasása, ami inkább nulladik feladat, mert olyan alapszintű
+    /// </summary>
     public partial class Erettsegi : Form
     {
         public List<Foglalkozas> foglalkozasok;
@@ -48,7 +52,16 @@ namespace Beadandó_200417
                 for (int i = 1; i < sorok.Count; i++)
                     szemelyek.Add(new Szemely(sorok[i]));
                 sorok = null;
-            }catch (Exception) { }
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show("Nem találtam meg a(z) " + e.FileName +
+                                " fájlt. Ez a te hibád, nem a programozóé mert neki működött.");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hiba: " + e.Message + ". Megint elronttál valamit, tégy egy szivességet és inkább kapcsold ki a gépet.");
+            }
         }
 
         private void elsoFeladat_Click(object sender, EventArgs e)
@@ -57,19 +70,16 @@ namespace Beadandó_200417
 
             string nevek = "2016-ban díjazottak\n\n";
             
+            //Végigmegyek az összes kitüntetésen
             foreach (Kituntetes k in kituntetesesek)
-            {
+                //Ha az adott kitüntetést 2016-ban adták át, akkor a kiírandó üzenethez adjuk hozzá a díjazott nevét
+                //A feladat nem írta, hogy betűrendben kell, szóval így tökéletes is lesz ez
                 if (k.ev == 2016)
-                {
                     foreach (Szemely sz in szemelyek)
-                    {
                         if (sz.azonosito == k.szemelyAzonosito)
                             nevek += sz.nev + "\n";
-                    }
-                }
-            }
-
-            outBox.Text = nevek;
+            
+            outBox.Text = nevek;//Kiírás
         }
 
         private void masodikFeladat_Click(object sender, EventArgs e)
@@ -78,65 +88,56 @@ namespace Beadandó_200417
             //azoknak a nevét, akiknek a foglalkozási neve tartalmazza a „kritikus” szórészletet!
             //A listában ábécérendben minden név egyszer jelenjen meg! 
 
-            List<string> nevek = new List<string>();
+            List<string> nevek = new List<string>();//Ebben a listában lesznek a kritikusok nevei
             
+            //Végigmegyünk az összes foglalkozáson
             foreach (Foglalkozas f in foglalkozasok)
-            {
+                //Ha az adott foglalkozás pont a kritikus, akkor hozzáadjuk a foglalkozáshoz tartozó nevét a kritikusok listájába
                 if (f.foglakozasNeve == "kritikus")
-                {
                     foreach (Szemely sz in szemelyek)
-                    {
                         if (sz.azonosito == f.szemelyAzonosito)
                            nevek.Add(sz.nev);
-                    }
-                }
-            }
+            
+            nevek.Sort();//A nevek ABC sorrendbe rendezése
 
-            nevek.Sort();
-
+            //Végül a nevek kiírása
             string output = "";
             foreach (string s in nevek)
-            {
                 output += s + "\n";
-            }
-            
             outBox.Text = "Díjazott kritikusok\n\n" + output;
         }
 
         private void harmadikFeladat_Click(object sender, EventArgs e)
         {
-            //Készítsen lekérdezést, amely megadja, hogy kik kaptak legalább háromszor József Attiladíjat és hányszor!
+            //Készítsen lekérdezést, amely megadja, hogy kik kaptak legalább háromszor József Attila díjat és hányszor!
             
             string nevek = "Ők kaptak legalább háromszor József Attila Díjat\n\n";
             
-            List<int> szemelyAzonositok = new List<int>();
-            List<int> szemelyAzonositokDarabszamai = new List<int>();
+            List<int> szemelyAzonositok = new List<int>();//Ebben a listában lesznek a személyek azonosítói
+            List<int> szemelyAzonositokDarabszamai = new List<int>();//Ebben a listában lesznek a személyek díjainak száma
+            
+            //Kiválogatjuk a személyazonosítókat, mindegyiknek nullázzuk a darabszámát
             foreach (Szemely sz in szemelyek)
             {
                 szemelyAzonositok.Add(sz.azonosito);
                 szemelyAzonositokDarabszamai.Add(0);
             }
 
+            //Végigmegyünk a személyazonosítókon
             for (int i = 0; i < szemelyAzonositok.Count; i++)
-            {
+                //Azonosítónként nézzük végig a díjakat
                 foreach (Kituntetes k in kituntetesesek)
-                {
+                    //Ha az adott díjat a vizsgált személyazonosító kapta, akkor növeljük a díjainak számát
                     if (k.szemelyAzonosito == szemelyAzonositok[i])
-                    {
                         szemelyAzonositokDarabszamai[i]++;
-                    }
-                }
-            }
-
+                    
+            //Végigmegyünk a darabszámokon
             for (int i = 0; i < szemelyAzonositokDarabszamai.Count; i++)
-            {
+                //Ha az adott személyazonosító legalább 3 díjat kapott, akkor adjuk hozzá a kiírandó szöveghez
                 if (szemelyAzonositokDarabszamai[i] >= 3)
-                {
                     nevek += szemelyek[i].nev + "\n";
-                }
-            }
             
-            outBox.Text = nevek;
+            outBox.Text = nevek;//Kiírás
         }
 
         private void negyedikFeladat_Click(object sender, EventArgs e)
@@ -154,24 +155,19 @@ namespace Beadandó_200417
 
             //Kiválogatom az egyedi foglalkozások neveit, először mindegyiknek 0 a darabszáma
             foreach (Foglalkozas f in foglalkozasok)
-            {
                 if (!egyediFoglalkozasokNeve.Contains(f.foglakozasNeve))
                 {
                     egyediFoglalkozasokNeve.Add(f.foglakozasNeve);
                     egyediekDarabszamai.Add(0);
                 }
-            }
+            
             
             //Megnézem melyik foglalkozás hányszor szerepel
             for (int i = 0; i < egyediFoglalkozasokNeve.Count; i++)
-            {
                 foreach (Foglalkozas f in foglalkozasok)
-                {
                     if (egyediFoglalkozasokNeve[i] == f.foglakozasNeve)
                         egyediekDarabszamai[i]++;
-                }
-            }
-
+            
             //Egy másik listában sorbaállítom ezeket a darabszámokat
             egyediekDarabszamaiSorted = egyediekDarabszamai;
             egyediekDarabszamaiSorted.Sort();
@@ -179,26 +175,18 @@ namespace Beadandó_200417
             //Az ismétlődések miatt egy harmadik listába kiválogatom az egyedi darabszámokat, amik már sorban vannak
             //Mivel növekvő sorrendben vannak ezért hátulról indulunk
             List<int> egyediRendezettDarabszamok = new List<int>();
-            
             for (int i = egyediekDarabszamaiSorted.Count-1; i > 0; i--)
-            {
                 if(!egyediRendezettDarabszamok.Contains(egyediekDarabszamaiSorted[i]))
                     egyediRendezettDarabszamok.Add(egyediekDarabszamaiSorted[i]);
-            }
+            
 
             //Visszafele végigmegyünk az egyedi darabszámokon, a legnagyobbtól a legkisebbik
             //Ha valamelyik darabszámhoz egyezik egy vagy több foglalkozás neve, akkor azt hozzáadjuk MÉG EGY listához
             //Ebben a listában már sorban lesznek a foglalkozásnevek, amelyik a legtöbbször szerepelt az az elején, amelyik a legkevesebbszer, az a végén
             for (int i = egyediRendezettDarabszamok.Count-1; i > 0 ; i--)
-            {
                 for (int k = 0; k < egyediekDarabszamai.Count; k++)
-                {
                     if (egyediekDarabszamai[k] == egyediRendezettDarabszamok[i])
-                    {
                         egyediFoglalkozasokNeveSorted.Add(egyediFoglalkozasokNeve[k]);
-                    }
-                }
-            }
             
             //Kiiratás, ez gondolom magától értetendő
             //Azt már biztos ki nem írom, hogy melyik hányszor volt
@@ -217,26 +205,20 @@ namespace Beadandó_200417
             Szemely bertha = null;
             
             foreach (Szemely sz in szemelyek)
-            {
-                if (sz.nev == "Bertha Bulcsu")
-                {
+                if (sz.nev == "Bertha Bulcsu") {
                     bertha = sz;
                     break;
                 }
-            }
-
+            
+            //Nullkezelés, előfordulhat hogy nincs bent az adatbázisban, ami lehetetlen, de azért biztosra kell menni
             if (bertha != null)
             {
                 //Bertha ezekben az években kapott díjat
                 List<int> berthaEvei = new List<int>();
                 foreach (Kituntetes k in kituntetesesek)
-                {
                     if (k.szemelyAzonosito == bertha.azonosito)
-                    {
                         if (!berthaEvei.Contains(k.ev))
                             berthaEvei.Add(k.ev);
-                    }
-                }
                 
                 berthaEvei.Sort(); //Menjünk időrendben
 
@@ -246,33 +228,26 @@ namespace Beadandó_200417
 
                 //Szálljanak az évek...
                 foreach (int ev in berthaEvei)
-                {
                     //Évenként végigmegyünk a kitüntéseken
                     foreach (Kituntetes k in kituntetesesek)
-                    {
                         //Ha ugyanabban az évben adták át a díjat, amikor Bertha is kapta
                         if (k.ev == ev)
                         {
                             //Hozzáadjuk az évet és a személy nevét a listához
                             dijazottEvei.Add(ev);
                             foreach (Szemely sz in szemelyek)
-                            {
                                 if (sz.azonosito == k.szemelyAzonosito)
                                 {
                                     dijazottNevei.Add(sz.nev);
                                     break;
                                 }
-                            }
+                            
                         }
-                    }
-                }
-
+                
                 //Kiiratás időrendben
                 string output = "";
                 for (int i = 0; i < dijazottNevei.Count; i++)
-                {
                     output += dijazottEvei[i] + ": " + dijazottNevei[i] + "\n";
-                }
                 outBox.Text = output;
             }
         }
@@ -295,17 +270,11 @@ namespace Beadandó_200417
                 output += i + "\n";//Adott év hozzáfűzése a kííráshoz
                 temp = new List<string>();//Ideiglenes lista nullázása
                 foreach (Kituntetes k in kituntetesesek)
-                {
                     //Ha a kitüntetést ebben az évben adták át, akkor adjuk hozzá az ideiglenes listához a kitüntetett nevét
                     if (k.ev == i)
-                    {
                         foreach (Szemely sz in szemelyek)
-                        {
                             if (sz.azonosito == k.szemelyAzonosito)
                                 temp.Add(sz.nev);
-                        }
-                    }
-                }
                 
                 temp.Sort();//Nevek ABC sorrendbe rendezése
 
