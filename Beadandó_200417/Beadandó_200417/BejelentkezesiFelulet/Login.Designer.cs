@@ -181,6 +181,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bejelentkezés";
             this.mainPanel.ResumeLayout(false);
             this.buttonPanel.ResumeLayout(false);
