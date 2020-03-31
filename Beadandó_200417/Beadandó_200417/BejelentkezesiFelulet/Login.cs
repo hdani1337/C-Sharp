@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Beadandó_200417
 {
+    //TODO: Code Cleanup
     public partial class Login : Form
     {
         public static List<User> users;
@@ -66,7 +67,7 @@ namespace Beadandó_200417
                     msg += usernameBox.Text + " sikeresen bejelentkezett.";
                     File.AppendAllText(@"..\..\log.txt",msg + "\n");
                     File.AppendAllText("log.txt",msg + "\n");
-                    Erettsegi erettsegi = new Erettsegi();
+                    Erettsegi erettsegi = new Erettsegi(this);
                     erettsegi.ShowDialog();
                 }
                 else if (vanUser && !vanPass)

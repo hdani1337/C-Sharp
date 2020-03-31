@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Beadandó_200417
 {
+    //TODO: Code Cleanup
     public partial class Register : Form
     {
         public Register()

@@ -36,8 +36,8 @@
             this.dataPanel = new System.Windows.Forms.TableLayoutPanel();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.usernameBox = new System.Windows.Forms.TextBox();
-            this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.dataPanel.SuspendLayout();
@@ -134,8 +134,10 @@
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.passwordBox.Location = new System.Drawing.Point(466, 272);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(455, 29);
             this.passwordBox.TabIndex = 1;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // usernameBox
             // 
@@ -146,18 +148,6 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(455, 29);
             this.usernameBox.TabIndex = 0;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F,
-                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.usernameLabel.Location = new System.Drawing.Point(288, 84);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(172, 23);
-            this.usernameLabel.TabIndex = 2;
-            this.usernameLabel.Text = "Felhasználónév";
-            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // passwordLabel
             // 
@@ -170,6 +160,18 @@
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Jelszó";
             this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F,
+                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.usernameLabel.Location = new System.Drawing.Point(289, 84);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(171, 23);
+            this.usernameLabel.TabIndex = 2;
+            this.usernameLabel.Text = "Felhasználónév";
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Login
             // 

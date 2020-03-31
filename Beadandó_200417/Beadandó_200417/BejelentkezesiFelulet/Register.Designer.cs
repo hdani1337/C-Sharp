@@ -34,18 +34,18 @@ namespace Beadandó_200417
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.registerButton = new System.Windows.Forms.Button();
             this.dataPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.passwordPanel = new System.Windows.Forms.Panel();
+            this.emailPanel = new System.Windows.Forms.Panel();
+            this.usernamePanel = new System.Windows.Forms.Panel();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.namePanel = new System.Windows.Forms.Panel();
-            this.usernamePanel = new System.Windows.Forms.Panel();
-            this.emailPanel = new System.Windows.Forms.Panel();
-            this.passwordPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.dataPanel.SuspendLayout();
             this.SuspendLayout();
@@ -113,6 +113,42 @@ namespace Beadandó_200417
             this.dataPanel.Size = new System.Drawing.Size(927, 383);
             this.dataPanel.TabIndex = 1;
             // 
+            // passwordPanel
+            // 
+            this.passwordPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordPanel.Location = new System.Drawing.Point(883, 288);
+            this.passwordPanel.Name = "passwordPanel";
+            this.passwordPanel.Size = new System.Drawing.Size(41, 92);
+            this.passwordPanel.TabIndex = 12;
+            // 
+            // emailPanel
+            // 
+            this.emailPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.emailPanel.Location = new System.Drawing.Point(883, 193);
+            this.emailPanel.Name = "emailPanel";
+            this.emailPanel.Size = new System.Drawing.Size(41, 89);
+            this.emailPanel.TabIndex = 11;
+            // 
+            // usernamePanel
+            // 
+            this.usernamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usernamePanel.Location = new System.Drawing.Point(883, 98);
+            this.usernamePanel.Name = "usernamePanel";
+            this.usernamePanel.Size = new System.Drawing.Size(41, 89);
+            this.usernamePanel.TabIndex = 10;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F,
+                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.passwordLabel.Location = new System.Drawing.Point(78, 320);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(197, 28);
+            this.passwordLabel.TabIndex = 6;
+            this.passwordLabel.Text = "Jelszó:";
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // nameBox
             // 
             this.nameBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -120,7 +156,7 @@ namespace Beadandó_200417
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.nameBox.Location = new System.Drawing.Point(281, 31);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(596, 33);
+            this.nameBox.Size = new System.Drawing.Size(594, 33);
             this.nameBox.TabIndex = 0;
             this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             // 
@@ -143,7 +179,7 @@ namespace Beadandó_200417
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.usernameBox.Location = new System.Drawing.Point(281, 126);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(596, 33);
+            this.usernameBox.Size = new System.Drawing.Size(594, 33);
             this.usernameBox.TabIndex = 3;
             this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
@@ -154,7 +190,7 @@ namespace Beadandó_200417
                 System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.emailBox.Location = new System.Drawing.Point(281, 221);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(596, 33);
+            this.emailBox.Size = new System.Drawing.Size(594, 33);
             this.emailBox.TabIndex = 4;
             this.emailBox.TextChanged += new System.EventHandler(this.emailBox_TextChanged);
             // 
@@ -166,22 +202,10 @@ namespace Beadandó_200417
             this.passwordBox.Location = new System.Drawing.Point(281, 317);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(596, 33);
+            this.passwordBox.Size = new System.Drawing.Size(594, 33);
             this.passwordBox.TabIndex = 5;
             this.passwordBox.UseSystemPasswordChar = true;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F,
-                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.passwordLabel.Location = new System.Drawing.Point(78, 320);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(197, 28);
-            this.passwordLabel.TabIndex = 6;
-            this.passwordLabel.Text = "Jelszó:";
-            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // emailLabel
             // 
@@ -200,9 +224,9 @@ namespace Beadandó_200417
             this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F,
                 System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.usernameLabel.Location = new System.Drawing.Point(78, 128);
+            this.usernameLabel.Location = new System.Drawing.Point(3, 119);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(197, 28);
+            this.usernameLabel.Size = new System.Drawing.Size(272, 47);
             this.usernameLabel.TabIndex = 8;
             this.usernameLabel.Text = "Új felhasználónév:";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,30 +238,6 @@ namespace Beadandó_200417
             this.namePanel.Name = "namePanel";
             this.namePanel.Size = new System.Drawing.Size(41, 89);
             this.namePanel.TabIndex = 9;
-            // 
-            // usernamePanel
-            // 
-            this.usernamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usernamePanel.Location = new System.Drawing.Point(883, 98);
-            this.usernamePanel.Name = "usernamePanel";
-            this.usernamePanel.Size = new System.Drawing.Size(41, 89);
-            this.usernamePanel.TabIndex = 10;
-            // 
-            // emailPanel
-            // 
-            this.emailPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.emailPanel.Location = new System.Drawing.Point(883, 193);
-            this.emailPanel.Name = "emailPanel";
-            this.emailPanel.Size = new System.Drawing.Size(41, 89);
-            this.emailPanel.TabIndex = 11;
-            // 
-            // passwordPanel
-            // 
-            this.passwordPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordPanel.Location = new System.Drawing.Point(883, 288);
-            this.passwordPanel.Name = "passwordPanel";
-            this.passwordPanel.Size = new System.Drawing.Size(41, 92);
-            this.passwordPanel.TabIndex = 12;
             // 
             // Register
             // 
