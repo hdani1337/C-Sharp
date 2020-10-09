@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.exe
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\Osztaly.cs
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\Program.cs
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\feladvanyok.txt
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.deps.json
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.runtimeconfig.json
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.runtimeconfig.dev.json
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.dll
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\bin\Debug\netcoreapp3.1\sudokuCLI.pdb
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.csprojAssemblyReference.cache
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.AssemblyInfo.cs
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.dll
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.pdb
+C:\Users\user\source\repos\sudokuCLI\sudokuCLI\obj\Debug\netcoreapp3.1\sudokuCLI.genruntimeconfig.cache
