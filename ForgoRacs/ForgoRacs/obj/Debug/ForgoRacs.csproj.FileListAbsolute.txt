@@ -1,0 +1,11 @@
+E:\C#\ForgoRacs\ForgoRacs\bin\Debug\ForgoRacs.exe.config
+E:\C#\ForgoRacs\ForgoRacs\bin\Debug\ForgoRacs.exe
+E:\C#\ForgoRacs\ForgoRacs\bin\Debug\ForgoRacs.pdb
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.csprojAssemblyReference.cache
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.Properties.Resources.resources
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.csproj.GenerateResource.cache
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.exe
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.pdb
+E:\C#\ForgoRacs\ForgoRacs\bin\Debug\kodlemez.txt
+E:\C#\ForgoRacs\ForgoRacs\bin\Debug\szoveg.txt
+E:\C#\ForgoRacs\ForgoRacs\obj\Debug\ForgoRacs.Form1.resources
